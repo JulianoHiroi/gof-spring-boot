@@ -50,7 +50,7 @@ public class UserServiceImp implements UserService {
     public User updateUser(User user, Long id) {
         Optional<User> userExist = userRepository.findById(id);
         if (userExist.isPresent()) {
-            return userRepository.save(user);
+            salvarClienteComCep(user);
         }
         return null;
     }
